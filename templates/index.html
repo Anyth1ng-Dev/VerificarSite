@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Verificador de Confiabilidade de Sites</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Verificador de Confiabilidade de Sites</h1>
+      <form method="post" action="/">
+        <label for="url">Insira o URL do site:</label>
+        <input type="text" id="url" name="url" required>
+        <button type="submit">Buscar Confiabilidade</button>
+      </form>
+      {% if resultado %}
+      <h2>Resultado:</h2>
+      <pre>{{ resultado }}</pre>
+      {% endif %}
+    </div>
+  </body>
+</html>
